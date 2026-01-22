@@ -12,7 +12,7 @@ dotenv.config();
    host:'localhost',
    user: 'root',
    password: 'Ayan@1012',
-   database: 'meydan_main_cdr',
+   database: 'shams_main_cdr',
    port: 3306,
    waitForConnections: true,
    connectionLimit: 50,  // Increased for better multi-tab performance

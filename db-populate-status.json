@@ -1,0 +1,15 @@
+{
+  "serviceStarted": "2026-01-21T13:08:59.050Z",
+  "status": "success",
+  "config": {
+    "intervalMinutes": 5,
+    "lookbackHours": 24
+  },
+  "lastUpdated": "2026-01-21T13:34:56.035Z",
+  "lastRun": "2026-01-21T13:34:56.033Z",
+  "duration": "5.76s",
+  "recordsAdded": 1508,
+  "followUpNotesUpdated": 0,
+  "dispositionUpdates": 0,
+  "nextRun": "2026-01-21T13:39:56.034Z"
+}

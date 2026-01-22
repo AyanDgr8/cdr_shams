@@ -1,0 +1,676 @@
+
+=========================================
+DB POPULATE SERVICE STARTED
+=========================================
+Date: 2026-01-21T13:08:59.049Z
+Interval: 5 minutes
+Lookback: 24 hours
+=========================================
+[2026-01-21T13:08:59.050Z] ℹ️ INFO: Log file initialized
+[2026-01-21T13:08:59.051Z] ℹ️ INFO: Starting initial run...
+[2026-01-21T13:08:59.052Z] ℹ️ INFO: Starting database population process (ID: run-1769000939052)...
+[2026-01-21T13:08:59.053Z] ℹ️ INFO: Using date range: 2026-01-20T13:08:59.000Z to 2026-01-21T13:08:59.000Z
+[2026-01-21T13:08:59.054Z] ℹ️ INFO: Lookback period: 24 hours
+[2026-01-21T13:08:59.059Z] ℹ️ INFO: Step 1: Checking current state of raw tables...
+[2026-01-21T13:08:59.060Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:08:59.163Z] ℹ️ INFO: raw_queue_inbound: 1871 records
+[2026-01-21T13:08:59.166Z] ℹ️ INFO: raw_queue_outbound: 7898 records
+[2026-01-21T13:08:59.168Z] ℹ️ INFO: raw_campaigns: 752 records
+[2026-01-21T13:08:59.168Z] ℹ️ INFO: Step 2: Fetching data from APIs and populating raw tables...
+[2026-01-21T13:09:07.290Z] ℹ️ INFO: API fetch results: {"totalTime":8120,"results":{"queueCalls":{"endpoint":"queueCalls","totalRecords":269,"totalPages":1},"queueOutboundCalls":{"endpoint":"queueOutboundCalls","totalRecords":1119,"totalPages":1},"campaignsActivity":{"endpoint":"campaignsActivity","totalRecords":99,"totalPages":1}}}
+[2026-01-21T13:09:07.291Z] ℹ️ INFO: Step 2.1: Verifying agent_disposition fields in stored raw data...
+[2026-01-21T13:09:07.292Z] ℹ️ INFO: Verifying agent_disposition fields in raw tables...
+[2026-01-21T13:09:07.301Z] ℹ️ INFO: Inbound (raw_queue_inbound): Found 5 recent records
+[2026-01-21T13:09:07.302Z] ℹ️ INFO:   ✅ ee7c91dc-6bb9-123f-d5b1-aa772e2f0671: agent_disposition = "CUSTOMER_SUPPORT"
+[2026-01-21T13:09:07.302Z] ℹ️ INFO:   ❌ ee7c91dc-6bb9-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:09:07.303Z] ℹ️ INFO:   ✅ ed092a9f-6bb9-123f-d5b1-aa772e2f0671: agent_disposition = "CUSTOMER_SUPPORT"
+[2026-01-21T13:09:07.303Z] ℹ️ INFO:   ❌ ed092a9f-6bb9-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:09:07.304Z] ℹ️ INFO:   ✅ 7edd2491-6bb9-123f-d5b1-aa772e2f0671: agent_disposition = "POST LEAD CONVERTED"
+[2026-01-21T13:09:07.305Z] ℹ️ INFO:   ❌ 7edd2491-6bb9-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:09:07.305Z] ℹ️ INFO:   ✅ 33765045-6bb9-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:09:07.306Z] ℹ️ INFO:   ❌ 33765045-6bb9-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:09:07.306Z] ℹ️ INFO:   ✅ 2920ce49-6bb9-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:09:07.307Z] ℹ️ INFO:   ❌ 2920ce49-6bb9-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:09:07.307Z] ℹ️ INFO: Inbound Summary: 5/5 have agent_disposition, 0/5 have agent_subdisposition
+[2026-01-21T13:09:07.327Z] ℹ️ INFO: Outbound (raw_queue_outbound): Found 5 recent records
+[2026-01-21T13:09:07.328Z] ℹ️ INFO:   ✅ 2ha3bj8a90edj53af7sm: agent_disposition = "SALE"
+[2026-01-21T13:09:07.328Z] ℹ️ INFO:   ❌ 2ha3bj8a90edj53af7sm: agent_subdisposition MISSING
+[2026-01-21T13:09:07.329Z] ℹ️ INFO:   ✅ 7ul7ol0b3kvteitlagc2: agent_disposition = "NON-SALE"
+[2026-01-21T13:09:07.330Z] ℹ️ INFO:   ❌ 7ul7ol0b3kvteitlagc2: agent_subdisposition MISSING
+[2026-01-21T13:09:07.330Z] ℹ️ INFO:   ✅ di7tp2hglj8pt3p0mask: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:09:07.331Z] ℹ️ INFO:   ❌ di7tp2hglj8pt3p0mask: agent_subdisposition MISSING
+[2026-01-21T13:09:07.332Z] ℹ️ INFO:   ✅ np5trh3ads0odalaituk: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:09:07.333Z] ℹ️ INFO:   ❌ np5trh3ads0odalaituk: agent_subdisposition MISSING
+[2026-01-21T13:09:07.333Z] ℹ️ INFO:   ✅ di7tp6av6m3l09udoso8: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:09:07.334Z] ℹ️ INFO:   ❌ di7tp6av6m3l09udoso8: agent_subdisposition MISSING
+[2026-01-21T13:09:07.335Z] ℹ️ INFO: Outbound Summary: 5/5 have agent_disposition, 0/5 have agent_subdisposition
+[2026-01-21T13:09:07.340Z] ℹ️ INFO: Campaign (raw_campaigns): Found 5 recent records
+[2026-01-21T13:09:07.340Z] ℹ️ INFO:   ❌ 7f59c1cc-f438-4ae4-b123-95e99eb5059b: agent_disposition MISSING
+[2026-01-21T13:09:07.341Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:09:07.341Z] ℹ️ INFO:   ❌ 7f59c1cc-f438-4ae4-b123-95e99eb5059b: agent_subdisposition MISSING
+[2026-01-21T13:09:07.342Z] ℹ️ INFO:   ✅ 518d6d3d-2829-443d-9c2a-6d55a7f22c82: agent_disposition = "NON-SALE"
+[2026-01-21T13:09:07.343Z] ℹ️ INFO:   ✅ 518d6d3d-2829-443d-9c2a-6d55a7f22c82: agent_subdisposition = "Call back"
+[2026-01-21T13:09:07.343Z] ℹ️ INFO:   ❌ 2e7e7c6e-98b5-4155-9702-663d0e8e3301: agent_disposition MISSING
+[2026-01-21T13:09:07.344Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:09:07.344Z] ℹ️ INFO:   ❌ 2e7e7c6e-98b5-4155-9702-663d0e8e3301: agent_subdisposition MISSING
+[2026-01-21T13:09:07.345Z] ℹ️ INFO:   ❌ d8e3bdec-4f2d-429c-b2c1-2cdcb1298dc8: agent_disposition MISSING
+[2026-01-21T13:09:07.345Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:09:07.346Z] ℹ️ INFO:   ❌ d8e3bdec-4f2d-429c-b2c1-2cdcb1298dc8: agent_subdisposition MISSING
+[2026-01-21T13:09:07.347Z] ℹ️ INFO:   ❌ a415b0e5-0417-4529-9df3-7ed46cf37b1f: agent_disposition MISSING
+[2026-01-21T13:09:07.347Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:09:07.348Z] ℹ️ INFO:   ❌ a415b0e5-0417-4529-9df3-7ed46cf37b1f: agent_subdisposition MISSING
+[2026-01-21T13:09:07.349Z] ℹ️ INFO: Campaign Summary: 1/5 have agent_disposition, 1/5 have agent_subdisposition
+[2026-01-21T13:09:07.349Z] ℹ️ INFO: Step 2.2: Updating missing disposition fields for recent calls...
+[2026-01-21T13:09:07.350Z] ℹ️ INFO: Updating missing disposition fields and follow-up notes for recent calls...
+[2026-01-21T13:09:07.351Z] ℹ️ INFO: Processing Inbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:09:07.367Z] ℹ️ INFO: Inbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:09:07.368Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_cdrs
+[2026-01-21T13:09:08.130Z] ℹ️ INFO: 🔍 Found 0/50 target calls in API response
+[2026-01-21T13:09:08.130Z] ℹ️ INFO: 📊 0/0 calls now have disposition information
+[2026-01-21T13:09:08.131Z] ℹ️ INFO: Inbound: Re-fetched 0 calls from API
+[2026-01-21T13:09:08.131Z] ℹ️ INFO: Inbound: Successfully updated 0 calls with disposition and follow-up notes
+[2026-01-21T13:09:08.131Z] ℹ️ INFO: Processing Outbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:09:08.161Z] ℹ️ INFO: Outbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:09:08.163Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_outbound_cdrs
+[2026-01-21T13:09:09.218Z] ℹ️ INFO: 🔍 Found 0/50 target calls in API response
+[2026-01-21T13:09:09.219Z] ℹ️ INFO: 📊 0/0 calls now have disposition information
+[2026-01-21T13:09:09.220Z] ℹ️ INFO: Outbound: Re-fetched 0 calls from API
+[2026-01-21T13:09:09.221Z] ℹ️ INFO: Outbound: Successfully updated 0 calls with disposition and follow-up notes
+[2026-01-21T13:09:09.222Z] ℹ️ INFO: Processing Campaign calls for disposition and follow-up notes updates...
+[2026-01-21T13:09:09.238Z] ℹ️ INFO: Campaign: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:09:09.243Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/campaigns/leads/history
+[2026-01-21T13:09:09.513Z] ℹ️ INFO: 🔍 Found 0/50 target calls in API response
+[2026-01-21T13:09:09.514Z] ℹ️ INFO: 📊 0/0 calls now have disposition information
+[2026-01-21T13:09:09.514Z] ℹ️ INFO: Campaign: Re-fetched 0 calls from API
+[2026-01-21T13:09:09.515Z] ℹ️ INFO: Campaign: Successfully updated 0 calls with disposition and follow-up notes
+[2026-01-21T13:09:09.515Z] ℹ️ INFO: Total calls updated with disposition and follow-up notes: 0
+[2026-01-21T13:09:09.516Z] ℹ️ INFO: Step 3: Checking raw tables after population...
+[2026-01-21T13:09:09.516Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:09:09.518Z] ℹ️ INFO: raw_queue_inbound: 1871 records
+[2026-01-21T13:09:09.521Z] ℹ️ INFO: raw_queue_outbound: 7898 records
+[2026-01-21T13:09:09.526Z] ℹ️ INFO: raw_campaigns: 752 records
+[2026-01-21T13:09:09.527Z] ℹ️ INFO: Total new raw records added: 0
+[2026-01-21T13:09:09.528Z] ℹ️ INFO: Step 4: Populating final_report table from raw tables...
+[2026-01-21T13:09:09.528Z] ℹ️ INFO: Adding new data without clearing existing records...
+[2026-01-21T13:09:09.529Z] ℹ️ INFO: Using enhanced final report population with CDR matching and follow-up notes...
+[2026-01-21T13:09:11.402Z] ✅ SUCCESS: Enhanced final report population result: {"success":true,"message":"Successfully populated final_report table with enhanced data in 1.87s","standardPopulation":{"success":true,"message":"Successfully populated final_report table with 1488 records in 1.86s","recordCount":1488},"followUpNotesCount":2376}
+[2026-01-21T13:09:11.403Z] ℹ️ INFO: Step 5: Verifying final_report table has data...
+[2026-01-21T13:09:11.406Z] ℹ️ INFO: final_report: 10521 records
+[2026-01-21T13:09:11.407Z] ℹ️ INFO: CDR records in final_report: 0 records
+[2026-01-21T13:09:11.418Z] ℹ️ INFO: Records with follow-up notes: 2376 records
+[2026-01-21T13:09:11.423Z] ℹ️ INFO: Record type distribution in final_report:
+[2026-01-21T13:09:11.423Z] ℹ️ INFO:   Outbound: 7898 records
+[2026-01-21T13:09:11.424Z] ℹ️ INFO:   Inbound: 1871 records
+[2026-01-21T13:09:11.424Z] ℹ️ INFO:   Campaign: 752 records
+[2026-01-21T13:09:11.425Z] ✅ SUCCESS: Process completed successfully in 12.37s!
+[2026-01-21T13:09:11.426Z] ℹ️ INFO: Scheduling next run at 2026-01-21T13:14:11.426Z (in 5 minutes)
+[2026-01-21T13:14:11.440Z] ℹ️ INFO: Starting database population process (ID: run-1769001251440)...
+[2026-01-21T13:14:11.443Z] ℹ️ INFO: Using date range: 2026-01-20T13:14:11.000Z to 2026-01-21T13:14:11.000Z
+[2026-01-21T13:14:11.445Z] ℹ️ INFO: Lookback period: 24 hours
+[2026-01-21T13:14:11.447Z] ℹ️ INFO: Step 1: Checking current state of raw tables...
+[2026-01-21T13:14:11.449Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:14:11.464Z] ℹ️ INFO: raw_queue_inbound: 1871 records
+[2026-01-21T13:14:11.473Z] ℹ️ INFO: raw_queue_outbound: 7898 records
+[2026-01-21T13:14:11.476Z] ℹ️ INFO: raw_campaigns: 752 records
+[2026-01-21T13:14:11.476Z] ℹ️ INFO: Step 2: Fetching data from APIs and populating raw tables...
+[2026-01-21T13:14:14.814Z] ℹ️ INFO: API fetch results: {"totalTime":3336,"results":{"queueCalls":{"endpoint":"queueCalls","totalRecords":267,"totalPages":1},"queueOutboundCalls":{"endpoint":"queueOutboundCalls","totalRecords":1129,"totalPages":1},"campaignsActivity":{"endpoint":"campaignsActivity","totalRecords":100,"totalPages":1}}}
+[2026-01-21T13:14:14.815Z] ℹ️ INFO: Step 2.1: Verifying agent_disposition fields in stored raw data...
+[2026-01-21T13:14:14.815Z] ℹ️ INFO: Verifying agent_disposition fields in raw tables...
+[2026-01-21T13:14:14.846Z] ℹ️ INFO: Inbound (raw_queue_inbound): Found 5 recent records
+[2026-01-21T13:14:14.846Z] ℹ️ INFO:   ✅ 1e431251-716d-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:14:14.847Z] ℹ️ INFO:   ❌ 1e431251-716d-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:14:14.848Z] ℹ️ INFO:   ✅ 79a36af5-716d-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:14:14.848Z] ℹ️ INFO:   ✅ 79a36af5-716d-123f-d5b1-aa772e2f0671: agent_subdisposition = "Visa "
+[2026-01-21T13:14:14.849Z] ℹ️ INFO:   ✅ 7edd2491-6bb9-123f-d5b1-aa772e2f0671: agent_disposition = "POST LEAD CONVERTED"
+[2026-01-21T13:14:14.849Z] ℹ️ INFO:   ❌ 7edd2491-6bb9-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:14:14.850Z] ℹ️ INFO:   ✅ 33765045-6bb9-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:14:14.850Z] ℹ️ INFO:   ❌ 33765045-6bb9-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:14:14.851Z] ℹ️ INFO:   ✅ 2920ce49-6bb9-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:14:14.851Z] ℹ️ INFO:   ❌ 2920ce49-6bb9-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:14:14.852Z] ℹ️ INFO: Inbound Summary: 5/5 have agent_disposition, 1/5 have agent_subdisposition
+[2026-01-21T13:14:14.893Z] ℹ️ INFO: Outbound (raw_queue_outbound): Found 5 recent records
+[2026-01-21T13:14:14.894Z] ℹ️ INFO:   ✅ q9h1m49j8hn4rtq56rbg: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:14:14.895Z] ℹ️ INFO:   ✅ q9h1m49j8hn4rtq56rbg: agent_subdisposition = "Ringing"
+[2026-01-21T13:14:14.895Z] ℹ️ INFO:   ❌ orshfjf1e6kc3iupe15e: agent_disposition MISSING
+[2026-01-21T13:14:14.896Z] ℹ️ INFO:   🔍 Available fields: to, a_leg, state, callid, abandoned, agent_ext, timestamp, agent_name, queue_name, called_time, disposition, hangup_time, agent_history, caller_id_name, interaction_id...
+[2026-01-21T13:14:14.896Z] ℹ️ INFO:   ❌ orshfjf1e6kc3iupe15e: agent_subdisposition MISSING
+[2026-01-21T13:14:14.897Z] ℹ️ INFO:   ✅ cd3d24s155hc1tnr4htn: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:14:14.897Z] ℹ️ INFO:   ✅ cd3d24s155hc1tnr4htn: agent_subdisposition = "Ringing"
+[2026-01-21T13:14:14.897Z] ℹ️ INFO:   ✅ q9h1md6hnnl1um5u5d4h: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:14:14.898Z] ℹ️ INFO:   ✅ q9h1md6hnnl1um5u5d4h: agent_subdisposition = "Ringing"
+[2026-01-21T13:14:14.898Z] ℹ️ INFO:   ✅ m63oqsucajs0uhdgplta: agent_disposition = "NON-SALE"
+[2026-01-21T13:14:14.899Z] ℹ️ INFO:   ✅ m63oqsucajs0uhdgplta: agent_subdisposition = "Call back"
+[2026-01-21T13:14:14.899Z] ℹ️ INFO: Outbound Summary: 4/5 have agent_disposition, 4/5 have agent_subdisposition
+[2026-01-21T13:14:14.919Z] ℹ️ INFO: Campaign (raw_campaigns): Found 5 recent records
+[2026-01-21T13:14:14.920Z] ℹ️ INFO:   ✅ b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition = "NON-SALE"
+[2026-01-21T13:14:14.920Z] ℹ️ INFO:   ✅ b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_subdisposition = "Call back"
+[2026-01-21T13:14:14.921Z] ℹ️ INFO:   ❌ 7f59c1cc-f438-4ae4-b123-95e99eb5059b: agent_disposition MISSING
+[2026-01-21T13:14:14.922Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:14:14.922Z] ℹ️ INFO:   ❌ 7f59c1cc-f438-4ae4-b123-95e99eb5059b: agent_subdisposition MISSING
+[2026-01-21T13:14:14.923Z] ℹ️ INFO:   ✅ 518d6d3d-2829-443d-9c2a-6d55a7f22c82: agent_disposition = "NON-SALE"
+[2026-01-21T13:14:14.924Z] ℹ️ INFO:   ✅ 518d6d3d-2829-443d-9c2a-6d55a7f22c82: agent_subdisposition = "Call back"
+[2026-01-21T13:14:14.924Z] ℹ️ INFO:   ❌ 2e7e7c6e-98b5-4155-9702-663d0e8e3301: agent_disposition MISSING
+[2026-01-21T13:14:14.925Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:14:14.926Z] ℹ️ INFO:   ❌ 2e7e7c6e-98b5-4155-9702-663d0e8e3301: agent_subdisposition MISSING
+[2026-01-21T13:14:14.926Z] ℹ️ INFO:   ❌ d8e3bdec-4f2d-429c-b2c1-2cdcb1298dc8: agent_disposition MISSING
+[2026-01-21T13:14:14.927Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:14:14.928Z] ℹ️ INFO:   ❌ d8e3bdec-4f2d-429c-b2c1-2cdcb1298dc8: agent_subdisposition MISSING
+[2026-01-21T13:14:14.928Z] ℹ️ INFO: Campaign Summary: 2/5 have agent_disposition, 2/5 have agent_subdisposition
+[2026-01-21T13:14:14.929Z] ℹ️ INFO: Step 2.2: Updating missing disposition fields for recent calls...
+[2026-01-21T13:14:14.929Z] ℹ️ INFO: Updating missing disposition fields and follow-up notes for recent calls...
+[2026-01-21T13:14:14.930Z] ℹ️ INFO: Processing Inbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:14:14.946Z] ℹ️ INFO: Inbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:14:14.947Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_cdrs
+[2026-01-21T13:14:17.120Z] ℹ️ INFO: 🔍 Found 2/50 target calls in API response
+[2026-01-21T13:14:17.121Z] ℹ️ INFO: 📊 1/2 calls now have disposition information
+[2026-01-21T13:14:17.122Z] ℹ️ INFO: Inbound: Re-fetched 2 calls from API
+[2026-01-21T13:14:17.151Z] ℹ️ INFO:   ✅ Updated 79a36af5-716d-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY" (retry count reset to 0)
+[2026-01-21T13:14:17.152Z] ❌ ERROR: Error updating disposition fields for raw_queue_inbound: hasRecording is not defined
+[2026-01-21T13:14:17.153Z] ℹ️ INFO: Processing Outbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:14:17.184Z] ℹ️ INFO: Outbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:14:17.185Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_outbound_cdrs
+[2026-01-21T13:14:24.316Z] ℹ️ INFO: 🔍 Found 12/50 target calls in API response
+[2026-01-21T13:14:24.318Z] ℹ️ INFO: 📊 10/12 calls now have disposition information
+[2026-01-21T13:14:24.319Z] ℹ️ INFO: Outbound: Re-fetched 12 calls from API
+[2026-01-21T13:14:24.336Z] ℹ️ INFO:   ✅ Updated q9h1m49j8hn4rtq56rbg: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:14:24.336Z] ❌ ERROR: Error updating disposition fields for raw_queue_outbound: hasRecording is not defined
+[2026-01-21T13:14:24.337Z] ℹ️ INFO: Processing Campaign calls for disposition and follow-up notes updates...
+[2026-01-21T13:14:24.352Z] ℹ️ INFO: Campaign: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:14:24.352Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/campaigns/leads/history
+[2026-01-21T13:14:25.400Z] ℹ️ INFO: 🔍 Found 1/50 target calls in API response
+[2026-01-21T13:14:25.401Z] ℹ️ INFO: 📊 1/1 calls now have disposition information
+[2026-01-21T13:14:25.403Z] ℹ️ INFO: Campaign: Re-fetched 1 calls from API
+[2026-01-21T13:14:25.415Z] ℹ️ INFO:   ✅ Updated b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition = "NON-SALE" (retry count reset to 0)
+[2026-01-21T13:14:25.417Z] ℹ️ INFO: Updating 1 records in final_report table with disposition and follow-up notes...
+[2026-01-21T13:14:25.421Z] ℹ️ INFO:   ✅ Updated final_report for b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition="NON-SALE", sub_disp="Call back"
+[2026-01-21T13:14:25.422Z] ℹ️ INFO: Campaign: Updated 1 records in final_report table
+[2026-01-21T13:14:25.424Z] ℹ️ INFO: Campaign: Successfully updated 1 calls with disposition and follow-up notes
+[2026-01-21T13:14:25.425Z] ℹ️ INFO: Total calls updated with disposition and follow-up notes: 1
+[2026-01-21T13:14:25.427Z] ℹ️ INFO: Step 3: Checking raw tables after population...
+[2026-01-21T13:14:25.428Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:14:25.431Z] ℹ️ INFO: raw_queue_inbound: 1873 records
+[2026-01-21T13:14:25.437Z] ℹ️ INFO: raw_queue_outbound: 7910 records
+[2026-01-21T13:14:25.439Z] ℹ️ INFO: raw_campaigns: 753 records
+[2026-01-21T13:14:25.440Z] ℹ️ INFO: Total new raw records added: 15
+[2026-01-21T13:14:25.440Z] ℹ️ INFO: Step 4: Populating final_report table from raw tables...
+[2026-01-21T13:14:25.441Z] ℹ️ INFO: Adding new data without clearing existing records...
+[2026-01-21T13:14:25.442Z] ℹ️ INFO: Using enhanced final report population with CDR matching and follow-up notes...
+[2026-01-21T13:14:27.390Z] ✅ SUCCESS: Enhanced final report population result: {"success":true,"message":"Successfully populated final_report table with enhanced data in 1.95s","standardPopulation":{"success":true,"message":"Successfully populated final_report table with 1497 records in 1.89s","recordCount":1497},"followUpNotesCount":2377}
+[2026-01-21T13:14:27.391Z] ℹ️ INFO: Step 5: Verifying final_report table has data...
+[2026-01-21T13:14:27.394Z] ℹ️ INFO: final_report: 10536 records
+[2026-01-21T13:14:27.396Z] ℹ️ INFO: CDR records in final_report: 0 records
+[2026-01-21T13:14:27.406Z] ℹ️ INFO: Records with follow-up notes: 2377 records
+[2026-01-21T13:14:27.412Z] ℹ️ INFO: Record type distribution in final_report:
+[2026-01-21T13:14:27.413Z] ℹ️ INFO:   Outbound: 7910 records
+[2026-01-21T13:14:27.413Z] ℹ️ INFO:   Inbound: 1873 records
+[2026-01-21T13:14:27.414Z] ℹ️ INFO:   Campaign: 753 records
+[2026-01-21T13:14:27.415Z] ✅ SUCCESS: Process completed successfully in 15.97s!
+[2026-01-21T13:14:27.416Z] ℹ️ INFO: Scheduling next run at 2026-01-21T13:19:27.416Z (in 5 minutes)
+[2026-01-21T13:19:27.427Z] ℹ️ INFO: Starting database population process (ID: run-1769001567427)...
+[2026-01-21T13:19:27.429Z] ℹ️ INFO: Using date range: 2026-01-20T13:19:27.000Z to 2026-01-21T13:19:27.000Z
+[2026-01-21T13:19:27.430Z] ℹ️ INFO: Lookback period: 24 hours
+[2026-01-21T13:19:27.432Z] ℹ️ INFO: Step 1: Checking current state of raw tables...
+[2026-01-21T13:19:27.433Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:19:27.444Z] ℹ️ INFO: raw_queue_inbound: 1873 records
+[2026-01-21T13:19:27.454Z] ℹ️ INFO: raw_queue_outbound: 7910 records
+[2026-01-21T13:19:27.458Z] ℹ️ INFO: raw_campaigns: 753 records
+[2026-01-21T13:19:27.459Z] ℹ️ INFO: Step 2: Fetching data from APIs and populating raw tables...
+[2026-01-21T13:19:30.179Z] ℹ️ INFO: API fetch results: {"totalTime":2718,"results":{"queueCalls":{"endpoint":"queueCalls","totalRecords":268,"totalPages":1},"queueOutboundCalls":{"endpoint":"queueOutboundCalls","totalRecords":1131,"totalPages":1},"campaignsActivity":{"endpoint":"campaignsActivity","totalRecords":97,"totalPages":1}}}
+[2026-01-21T13:19:30.179Z] ℹ️ INFO: Step 2.1: Verifying agent_disposition fields in stored raw data...
+[2026-01-21T13:19:30.180Z] ℹ️ INFO: Verifying agent_disposition fields in raw tables...
+[2026-01-21T13:19:30.208Z] ℹ️ INFO: Inbound (raw_queue_inbound): Found 5 recent records
+[2026-01-21T13:19:30.209Z] ℹ️ INFO:   ✅ 12064fde-716e-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:19:30.209Z] ℹ️ INFO:   ✅ 12064fde-716e-123f-d5b1-aa772e2f0671: agent_subdisposition = "Other "
+[2026-01-21T13:19:30.210Z] ℹ️ INFO:   ✅ 79a36af5-716d-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:19:30.210Z] ℹ️ INFO:   ✅ 79a36af5-716d-123f-d5b1-aa772e2f0671: agent_subdisposition = "Visa "
+[2026-01-21T13:19:30.211Z] ℹ️ INFO:   ✅ 1e431251-716d-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:19:30.211Z] ℹ️ INFO:   ❌ 1e431251-716d-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:19:30.212Z] ℹ️ INFO:   ✅ 33765045-6bb9-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:19:30.212Z] ℹ️ INFO:   ❌ 33765045-6bb9-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:19:30.213Z] ℹ️ INFO:   ✅ 2920ce49-6bb9-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:19:30.213Z] ℹ️ INFO:   ❌ 2920ce49-6bb9-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:19:30.214Z] ℹ️ INFO: Inbound Summary: 5/5 have agent_disposition, 2/5 have agent_subdisposition
+[2026-01-21T13:19:30.252Z] ℹ️ INFO: Outbound (raw_queue_outbound): Found 5 recent records
+[2026-01-21T13:19:30.252Z] ℹ️ INFO:   ✅ q9h1motl53v8iqgh1a1s: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:19:30.253Z] ℹ️ INFO:   ✅ q9h1motl53v8iqgh1a1s: agent_subdisposition = "Ringing"
+[2026-01-21T13:19:30.254Z] ℹ️ INFO:   ❌ cd3d20k4eg8encfs76d2: agent_disposition MISSING
+[2026-01-21T13:19:30.254Z] ℹ️ INFO:   🔍 Available fields: to, a_leg, state, callid, abandoned, agent_ext, timestamp, agent_name, queue_name, called_time, disposition, hangup_time, agent_history, caller_id_name, interaction_id...
+[2026-01-21T13:19:30.254Z] ℹ️ INFO:   ❌ cd3d20k4eg8encfs76d2: agent_subdisposition MISSING
+[2026-01-21T13:19:30.255Z] ℹ️ INFO:   ✅ orshfub09i7osog05e0k: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:19:30.255Z] ℹ️ INFO:   ✅ orshfub09i7osog05e0k: agent_subdisposition = "Ringing"
+[2026-01-21T13:19:30.256Z] ℹ️ INFO:   ✅ q9h1ml24dc71c3jrmj35: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:19:30.256Z] ℹ️ INFO:   ✅ q9h1ml24dc71c3jrmj35: agent_subdisposition = "Ringing"
+[2026-01-21T13:19:30.257Z] ℹ️ INFO:   ✅ vrdl53ekjbjdsp73er5k: agent_disposition = "OUTBOUND"
+[2026-01-21T13:19:30.257Z] ℹ️ INFO:   ✅ vrdl53ekjbjdsp73er5k: agent_subdisposition = "Not contactable"
+[2026-01-21T13:19:30.258Z] ℹ️ INFO: Outbound Summary: 4/5 have agent_disposition, 4/5 have agent_subdisposition
+[2026-01-21T13:19:30.275Z] ℹ️ INFO: Campaign (raw_campaigns): Found 5 recent records
+[2026-01-21T13:19:30.276Z] ℹ️ INFO:   ✅ b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition = "NON-SALE"
+[2026-01-21T13:19:30.277Z] ℹ️ INFO:   ✅ b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_subdisposition = "Call back"
+[2026-01-21T13:19:30.277Z] ℹ️ INFO:   ❌ 7f59c1cc-f438-4ae4-b123-95e99eb5059b: agent_disposition MISSING
+[2026-01-21T13:19:30.277Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:19:30.278Z] ℹ️ INFO:   ❌ 7f59c1cc-f438-4ae4-b123-95e99eb5059b: agent_subdisposition MISSING
+[2026-01-21T13:19:30.278Z] ℹ️ INFO:   ✅ 518d6d3d-2829-443d-9c2a-6d55a7f22c82: agent_disposition = "NON-SALE"
+[2026-01-21T13:19:30.279Z] ℹ️ INFO:   ✅ 518d6d3d-2829-443d-9c2a-6d55a7f22c82: agent_subdisposition = "Call back"
+[2026-01-21T13:19:30.279Z] ℹ️ INFO:   ❌ 2e7e7c6e-98b5-4155-9702-663d0e8e3301: agent_disposition MISSING
+[2026-01-21T13:19:30.279Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:19:30.280Z] ℹ️ INFO:   ❌ 2e7e7c6e-98b5-4155-9702-663d0e8e3301: agent_subdisposition MISSING
+[2026-01-21T13:19:30.280Z] ℹ️ INFO:   ❌ d8e3bdec-4f2d-429c-b2c1-2cdcb1298dc8: agent_disposition MISSING
+[2026-01-21T13:19:30.281Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:19:30.281Z] ℹ️ INFO:   ❌ d8e3bdec-4f2d-429c-b2c1-2cdcb1298dc8: agent_subdisposition MISSING
+[2026-01-21T13:19:30.282Z] ℹ️ INFO: Campaign Summary: 2/5 have agent_disposition, 2/5 have agent_subdisposition
+[2026-01-21T13:19:30.282Z] ℹ️ INFO: Step 2.2: Updating missing disposition fields for recent calls...
+[2026-01-21T13:19:30.283Z] ℹ️ INFO: Updating missing disposition fields and follow-up notes for recent calls...
+[2026-01-21T13:19:30.283Z] ℹ️ INFO: Processing Inbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:19:30.295Z] ℹ️ INFO: Inbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:19:30.296Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_cdrs
+[2026-01-21T13:19:33.547Z] ℹ️ INFO: 🔍 Found 3/50 target calls in API response
+[2026-01-21T13:19:33.548Z] ℹ️ INFO: 📊 2/3 calls now have disposition information
+[2026-01-21T13:19:33.548Z] ℹ️ INFO: Inbound: Re-fetched 3 calls from API
+[2026-01-21T13:19:33.569Z] ℹ️ INFO:   ✅ Updated 12064fde-716e-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY" (retry count reset to 0)
+[2026-01-21T13:19:33.578Z] ℹ️ INFO:   ✅ Updated 79a36af5-716d-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY" (retry count reset to 0)
+[2026-01-21T13:19:33.579Z] ❌ ERROR: Error updating disposition fields for raw_queue_inbound: hasRecording is not defined
+[2026-01-21T13:19:33.579Z] ℹ️ INFO: Processing Outbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:19:33.613Z] ℹ️ INFO: Outbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:19:33.614Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_outbound_cdrs
+[2026-01-21T13:19:34.428Z] ℹ️ INFO: 🔍 Found 18/50 target calls in API response
+[2026-01-21T13:19:34.429Z] ℹ️ INFO: 📊 16/18 calls now have disposition information
+[2026-01-21T13:19:34.430Z] ℹ️ INFO: Outbound: Re-fetched 18 calls from API
+[2026-01-21T13:19:34.444Z] ℹ️ INFO:   ✅ Updated q9h1motl53v8iqgh1a1s: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:19:34.445Z] ❌ ERROR: Error updating disposition fields for raw_queue_outbound: hasRecording is not defined
+[2026-01-21T13:19:34.445Z] ℹ️ INFO: Processing Campaign calls for disposition and follow-up notes updates...
+[2026-01-21T13:19:34.454Z] ℹ️ INFO: Campaign: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:19:34.455Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/campaigns/leads/history
+[2026-01-21T13:19:34.722Z] ℹ️ INFO: 🔍 Found 1/50 target calls in API response
+[2026-01-21T13:19:34.723Z] ℹ️ INFO: 📊 1/1 calls now have disposition information
+[2026-01-21T13:19:34.724Z] ℹ️ INFO: Campaign: Re-fetched 1 calls from API
+[2026-01-21T13:19:34.734Z] ℹ️ INFO:   ✅ Updated b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition = "NON-SALE" (retry count reset to 0)
+[2026-01-21T13:19:34.734Z] ℹ️ INFO: Updating 1 records in final_report table with disposition and follow-up notes...
+[2026-01-21T13:19:34.743Z] ℹ️ INFO:   ✅ Updated final_report for b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition="NON-SALE", sub_disp="Call back"
+[2026-01-21T13:19:34.744Z] ℹ️ INFO: Campaign: Updated 1 records in final_report table
+[2026-01-21T13:19:34.745Z] ℹ️ INFO: Campaign: Successfully updated 1 calls with disposition and follow-up notes
+[2026-01-21T13:19:34.745Z] ℹ️ INFO: Total calls updated with disposition and follow-up notes: 1
+[2026-01-21T13:19:34.746Z] ℹ️ INFO: Step 3: Checking raw tables after population...
+[2026-01-21T13:19:34.746Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:19:34.748Z] ℹ️ INFO: raw_queue_inbound: 1874 records
+[2026-01-21T13:19:34.750Z] ℹ️ INFO: raw_queue_outbound: 7916 records
+[2026-01-21T13:19:34.752Z] ℹ️ INFO: raw_campaigns: 753 records
+[2026-01-21T13:19:34.752Z] ℹ️ INFO: Total new raw records added: 7
+[2026-01-21T13:19:34.753Z] ℹ️ INFO: Step 4: Populating final_report table from raw tables...
+[2026-01-21T13:19:34.753Z] ℹ️ INFO: Adding new data without clearing existing records...
+[2026-01-21T13:19:34.754Z] ℹ️ INFO: Using enhanced final report population with CDR matching and follow-up notes...
+[2026-01-21T13:19:36.418Z] ✅ SUCCESS: Enhanced final report population result: {"success":true,"message":"Successfully populated final_report table with enhanced data in 1.66s","standardPopulation":{"success":true,"message":"Successfully populated final_report table with 1496 records in 1.60s","recordCount":1496},"followUpNotesCount":2377}
+[2026-01-21T13:19:36.419Z] ℹ️ INFO: Step 5: Verifying final_report table has data...
+[2026-01-21T13:19:36.423Z] ℹ️ INFO: final_report: 10543 records
+[2026-01-21T13:19:36.424Z] ℹ️ INFO: CDR records in final_report: 0 records
+[2026-01-21T13:19:36.435Z] ℹ️ INFO: Records with follow-up notes: 2377 records
+[2026-01-21T13:19:36.439Z] ℹ️ INFO: Record type distribution in final_report:
+[2026-01-21T13:19:36.440Z] ℹ️ INFO:   Outbound: 7916 records
+[2026-01-21T13:19:36.440Z] ℹ️ INFO:   Inbound: 1874 records
+[2026-01-21T13:19:36.441Z] ℹ️ INFO:   Campaign: 753 records
+[2026-01-21T13:19:36.442Z] ✅ SUCCESS: Process completed successfully in 9.02s!
+[2026-01-21T13:19:36.443Z] ℹ️ INFO: Scheduling next run at 2026-01-21T13:24:36.443Z (in 5 minutes)
+[2026-01-21T13:24:36.460Z] ℹ️ INFO: Starting database population process (ID: run-1769001876460)...
+[2026-01-21T13:24:36.463Z] ℹ️ INFO: Using date range: 2026-01-20T13:24:36.000Z to 2026-01-21T13:24:36.000Z
+[2026-01-21T13:24:36.466Z] ℹ️ INFO: Lookback period: 24 hours
+[2026-01-21T13:24:36.468Z] ℹ️ INFO: Step 1: Checking current state of raw tables...
+[2026-01-21T13:24:36.471Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:24:36.482Z] ℹ️ INFO: raw_queue_inbound: 1874 records
+[2026-01-21T13:24:36.490Z] ℹ️ INFO: raw_queue_outbound: 7916 records
+[2026-01-21T13:24:36.493Z] ℹ️ INFO: raw_campaigns: 753 records
+[2026-01-21T13:24:36.494Z] ℹ️ INFO: Step 2: Fetching data from APIs and populating raw tables...
+[2026-01-21T13:24:39.631Z] ℹ️ INFO: API fetch results: {"totalTime":3136,"results":{"queueCalls":{"endpoint":"queueCalls","totalRecords":270,"totalPages":1},"queueOutboundCalls":{"endpoint":"queueOutboundCalls","totalRecords":1134,"totalPages":1},"campaignsActivity":{"endpoint":"campaignsActivity","totalRecords":97,"totalPages":1}}}
+[2026-01-21T13:24:39.632Z] ℹ️ INFO: Step 2.1: Verifying agent_disposition fields in stored raw data...
+[2026-01-21T13:24:39.633Z] ℹ️ INFO: Verifying agent_disposition fields in raw tables...
+[2026-01-21T13:24:39.663Z] ℹ️ INFO: Inbound (raw_queue_inbound): Found 5 recent records
+[2026-01-21T13:24:39.664Z] ℹ️ INFO:   ✅ e817afe2-716e-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:24:39.664Z] ℹ️ INFO:   ❌ e817afe2-716e-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:24:39.665Z] ℹ️ INFO:   ✅ 2189ce54-716f-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:24:39.667Z] ℹ️ INFO:   ❌ 2189ce54-716f-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:24:39.668Z] ℹ️ INFO:   ✅ 12064fde-716e-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:24:39.669Z] ℹ️ INFO:   ✅ 12064fde-716e-123f-d5b1-aa772e2f0671: agent_subdisposition = "Other "
+[2026-01-21T13:24:39.670Z] ℹ️ INFO:   ✅ 79a36af5-716d-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:24:39.671Z] ℹ️ INFO:   ✅ 79a36af5-716d-123f-d5b1-aa772e2f0671: agent_subdisposition = "Visa "
+[2026-01-21T13:24:39.672Z] ℹ️ INFO:   ✅ 1e431251-716d-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:24:39.672Z] ℹ️ INFO:   ❌ 1e431251-716d-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:24:39.674Z] ℹ️ INFO: Inbound Summary: 5/5 have agent_disposition, 2/5 have agent_subdisposition
+[2026-01-21T13:24:39.739Z] ℹ️ INFO: Outbound (raw_queue_outbound): Found 5 recent records
+[2026-01-21T13:24:39.740Z] ℹ️ INFO:   ✅ q9h1m78maqhbk601krqq: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:24:39.740Z] ℹ️ INFO:   ✅ q9h1m78maqhbk601krqq: agent_subdisposition = "Ringing"
+[2026-01-21T13:24:39.741Z] ℹ️ INFO:   ✅ orshfck6cjfl29jaah5m: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:24:39.741Z] ℹ️ INFO:   ✅ orshfck6cjfl29jaah5m: agent_subdisposition = "Ringing"
+[2026-01-21T13:24:39.742Z] ℹ️ INFO:   ✅ 7pr048mkoq7i9u7k8r8c: agent_disposition = "AS"
+[2026-01-21T13:24:39.742Z] ℹ️ INFO:   ✅ 7pr048mkoq7i9u7k8r8c: agent_subdisposition = "Not Connected"
+[2026-01-21T13:24:39.743Z] ℹ️ INFO:   ✅ irpt8faj808ocvniv2tc: agent_disposition = "AS"
+[2026-01-21T13:24:39.743Z] ℹ️ INFO:   ✅ irpt8faj808ocvniv2tc: agent_subdisposition = "Connected"
+[2026-01-21T13:24:39.744Z] ℹ️ INFO:   ❌ ug1afrqfujjbebt6a7p4: agent_disposition MISSING
+[2026-01-21T13:24:39.745Z] ℹ️ INFO:   🔍 Available fields: to, a_leg, state, callid, abandoned, agent_ext, timestamp, agent_name, queue_name, called_time, disposition, hangup_time, agent_history, answered_time, queue_history...
+[2026-01-21T13:24:39.745Z] ℹ️ INFO:   ❌ ug1afrqfujjbebt6a7p4: agent_subdisposition MISSING
+[2026-01-21T13:24:39.746Z] ℹ️ INFO: Outbound Summary: 4/5 have agent_disposition, 4/5 have agent_subdisposition
+[2026-01-21T13:24:39.766Z] ℹ️ INFO: Campaign (raw_campaigns): Found 5 recent records
+[2026-01-21T13:24:39.766Z] ℹ️ INFO:   ✅ b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition = "NON-SALE"
+[2026-01-21T13:24:39.767Z] ℹ️ INFO:   ✅ b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_subdisposition = "Call back"
+[2026-01-21T13:24:39.768Z] ℹ️ INFO:   ❌ 7f59c1cc-f438-4ae4-b123-95e99eb5059b: agent_disposition MISSING
+[2026-01-21T13:24:39.768Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:24:39.769Z] ℹ️ INFO:   ❌ 7f59c1cc-f438-4ae4-b123-95e99eb5059b: agent_subdisposition MISSING
+[2026-01-21T13:24:39.769Z] ℹ️ INFO:   ✅ 518d6d3d-2829-443d-9c2a-6d55a7f22c82: agent_disposition = "NON-SALE"
+[2026-01-21T13:24:39.770Z] ℹ️ INFO:   ✅ 518d6d3d-2829-443d-9c2a-6d55a7f22c82: agent_subdisposition = "Call back"
+[2026-01-21T13:24:39.770Z] ℹ️ INFO:   ❌ 2e7e7c6e-98b5-4155-9702-663d0e8e3301: agent_disposition MISSING
+[2026-01-21T13:24:39.771Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:24:39.771Z] ℹ️ INFO:   ❌ 2e7e7c6e-98b5-4155-9702-663d0e8e3301: agent_subdisposition MISSING
+[2026-01-21T13:24:39.772Z] ℹ️ INFO:   ❌ d8e3bdec-4f2d-429c-b2c1-2cdcb1298dc8: agent_disposition MISSING
+[2026-01-21T13:24:39.772Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:24:39.773Z] ℹ️ INFO:   ❌ d8e3bdec-4f2d-429c-b2c1-2cdcb1298dc8: agent_subdisposition MISSING
+[2026-01-21T13:24:39.774Z] ℹ️ INFO: Campaign Summary: 2/5 have agent_disposition, 2/5 have agent_subdisposition
+[2026-01-21T13:24:39.774Z] ℹ️ INFO: Step 2.2: Updating missing disposition fields for recent calls...
+[2026-01-21T13:24:39.775Z] ℹ️ INFO: Updating missing disposition fields and follow-up notes for recent calls...
+[2026-01-21T13:24:39.775Z] ℹ️ INFO: Processing Inbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:24:39.798Z] ℹ️ INFO: Inbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:24:39.799Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_cdrs
+[2026-01-21T13:24:40.545Z] ℹ️ INFO: 🔍 Found 5/50 target calls in API response
+[2026-01-21T13:24:40.546Z] ℹ️ INFO: 📊 2/5 calls now have disposition information
+[2026-01-21T13:24:40.547Z] ℹ️ INFO: Inbound: Re-fetched 5 calls from API
+[2026-01-21T13:24:40.548Z] ❌ ERROR: Error updating disposition fields for raw_queue_inbound: hasRecording is not defined
+[2026-01-21T13:24:40.549Z] ℹ️ INFO: Processing Outbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:24:40.588Z] ℹ️ INFO: Outbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:24:40.589Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_outbound_cdrs
+[2026-01-21T13:24:41.153Z] ℹ️ INFO: 🔍 Found 24/50 target calls in API response
+[2026-01-21T13:24:41.154Z] ℹ️ INFO: 📊 23/24 calls now have disposition information
+[2026-01-21T13:24:41.155Z] ℹ️ INFO: Outbound: Re-fetched 24 calls from API
+[2026-01-21T13:24:41.163Z] ℹ️ INFO:   ✅ Updated q9h1m78maqhbk601krqq: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:24:41.168Z] ℹ️ INFO:   ✅ Updated orshfck6cjfl29jaah5m: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:24:41.174Z] ℹ️ INFO:   ✅ Updated 7pr048mkoq7i9u7k8r8c: agent_disposition = "AS", follow_up_notes = "Vestia AI LLC" (retry count reset to 0)
+[2026-01-21T13:24:41.183Z] ℹ️ INFO:   ✅ Updated q9h1motl53v8iqgh1a1s: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:24:41.188Z] ℹ️ INFO:   ✅ Updated cd3d20k4eg8encfs76d2: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:24:41.193Z] ℹ️ INFO:   ✅ Updated irpt8faj808ocvniv2tc: agent_disposition = "AS" (retry count reset to 0)
+[2026-01-21T13:24:41.198Z] ℹ️ INFO:   ✅ Updated orshfub09i7osog05e0k: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:24:41.203Z] ℹ️ INFO:   ✅ Updated q9h1ml24dc71c3jrmj35: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:24:41.207Z] ℹ️ INFO:   ✅ Updated vrdl53ekjbjdsp73er5k: agent_disposition = "OUTBOUND" (retry count reset to 0)
+[2026-01-21T13:24:41.212Z] ℹ️ INFO:   ✅ Updated l1tr4h2q58uvg0rtgeor: agent_disposition = "AS" (retry count reset to 0)
+[2026-01-21T13:24:41.215Z] ℹ️ INFO:   ✅ Updated q9h1m49j8hn4rtq56rbg: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:24:41.220Z] ℹ️ INFO:   ✅ Updated orshfjf1e6kc3iupe15e: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:24:41.225Z] ℹ️ INFO:   ✅ Updated cd3d24s155hc1tnr4htn: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:24:41.230Z] ℹ️ INFO:   ✅ Updated q9h1md6hnnl1um5u5d4h: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:24:41.234Z] ℹ️ INFO:   ✅ Updated m63oqsucajs0uhdgplta: agent_disposition = "NON-SALE" (retry count reset to 0)
+[2026-01-21T13:24:41.235Z] ❌ ERROR: Error updating disposition fields for raw_queue_outbound: hasRecording is not defined
+[2026-01-21T13:24:41.236Z] ℹ️ INFO: Processing Campaign calls for disposition and follow-up notes updates...
+[2026-01-21T13:24:41.247Z] ℹ️ INFO: Campaign: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:24:41.248Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/campaigns/leads/history
+[2026-01-21T13:24:41.516Z] ℹ️ INFO: 🔍 Found 1/50 target calls in API response
+[2026-01-21T13:24:41.517Z] ℹ️ INFO: 📊 1/1 calls now have disposition information
+[2026-01-21T13:24:41.518Z] ℹ️ INFO: Campaign: Re-fetched 1 calls from API
+[2026-01-21T13:24:41.531Z] ℹ️ INFO:   ✅ Updated b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition = "NON-SALE" (retry count reset to 0)
+[2026-01-21T13:24:41.532Z] ℹ️ INFO: Updating 1 records in final_report table with disposition and follow-up notes...
+[2026-01-21T13:24:41.539Z] ℹ️ INFO:   ✅ Updated final_report for b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition="NON-SALE", sub_disp="Call back"
+[2026-01-21T13:24:41.540Z] ℹ️ INFO: Campaign: Updated 1 records in final_report table
+[2026-01-21T13:24:41.540Z] ℹ️ INFO: Campaign: Successfully updated 1 calls with disposition and follow-up notes
+[2026-01-21T13:24:41.541Z] ℹ️ INFO: Total calls updated with disposition and follow-up notes: 1
+[2026-01-21T13:24:41.541Z] ℹ️ INFO: Step 3: Checking raw tables after population...
+[2026-01-21T13:24:41.542Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:24:41.543Z] ℹ️ INFO: raw_queue_inbound: 1876 records
+[2026-01-21T13:24:41.545Z] ℹ️ INFO: raw_queue_outbound: 7922 records
+[2026-01-21T13:24:41.546Z] ℹ️ INFO: raw_campaigns: 753 records
+[2026-01-21T13:24:41.547Z] ℹ️ INFO: Total new raw records added: 8
+[2026-01-21T13:24:41.547Z] ℹ️ INFO: Step 4: Populating final_report table from raw tables...
+[2026-01-21T13:24:41.548Z] ℹ️ INFO: Adding new data without clearing existing records...
+[2026-01-21T13:24:41.548Z] ℹ️ INFO: Using enhanced final report population with CDR matching and follow-up notes...
+[2026-01-21T13:24:43.364Z] ✅ SUCCESS: Enhanced final report population result: {"success":true,"message":"Successfully populated final_report table with enhanced data in 1.81s","standardPopulation":{"success":true,"message":"Successfully populated final_report table with 1501 records in 1.77s","recordCount":1501},"followUpNotesCount":2379}
+[2026-01-21T13:24:43.365Z] ℹ️ INFO: Step 5: Verifying final_report table has data...
+[2026-01-21T13:24:43.368Z] ℹ️ INFO: final_report: 10551 records
+[2026-01-21T13:24:43.369Z] ℹ️ INFO: CDR records in final_report: 0 records
+[2026-01-21T13:24:43.379Z] ℹ️ INFO: Records with follow-up notes: 2379 records
+[2026-01-21T13:24:43.383Z] ℹ️ INFO: Record type distribution in final_report:
+[2026-01-21T13:24:43.384Z] ℹ️ INFO:   Outbound: 7922 records
+[2026-01-21T13:24:43.384Z] ℹ️ INFO:   Inbound: 1876 records
+[2026-01-21T13:24:43.385Z] ℹ️ INFO:   Campaign: 753 records
+[2026-01-21T13:24:43.385Z] ✅ SUCCESS: Process completed successfully in 6.92s!
+[2026-01-21T13:24:43.387Z] ℹ️ INFO: Scheduling next run at 2026-01-21T13:29:43.387Z (in 5 minutes)
+[2026-01-21T13:29:43.401Z] ℹ️ INFO: Starting database population process (ID: run-1769002183401)...
+[2026-01-21T13:29:43.402Z] ℹ️ INFO: Using date range: 2026-01-20T13:29:43.000Z to 2026-01-21T13:29:43.000Z
+[2026-01-21T13:29:43.403Z] ℹ️ INFO: Lookback period: 24 hours
+[2026-01-21T13:29:43.403Z] ℹ️ INFO: Step 1: Checking current state of raw tables...
+[2026-01-21T13:29:43.404Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:29:43.407Z] ℹ️ INFO: raw_queue_inbound: 1876 records
+[2026-01-21T13:29:43.413Z] ℹ️ INFO: raw_queue_outbound: 7922 records
+[2026-01-21T13:29:43.416Z] ℹ️ INFO: raw_campaigns: 753 records
+[2026-01-21T13:29:43.417Z] ℹ️ INFO: Step 2: Fetching data from APIs and populating raw tables...
+[2026-01-21T13:29:46.016Z] ℹ️ INFO: API fetch results: {"totalTime":2597,"results":{"queueCalls":{"endpoint":"queueCalls","totalRecords":275,"totalPages":1},"queueOutboundCalls":{"endpoint":"queueOutboundCalls","totalRecords":1132,"totalPages":1},"campaignsActivity":{"endpoint":"campaignsActivity","totalRecords":97,"totalPages":1}}}
+[2026-01-21T13:29:46.017Z] ℹ️ INFO: Step 2.1: Verifying agent_disposition fields in stored raw data...
+[2026-01-21T13:29:46.018Z] ℹ️ INFO: Verifying agent_disposition fields in raw tables...
+[2026-01-21T13:29:46.043Z] ℹ️ INFO: Inbound (raw_queue_inbound): Found 5 recent records
+[2026-01-21T13:29:46.043Z] ℹ️ INFO:   ✅ 94a4d727-716d-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:29:46.044Z] ℹ️ INFO:   ❌ 94a4d727-716d-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:29:46.045Z] ℹ️ INFO:   ✅ acfeb416-716f-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:29:46.045Z] ℹ️ INFO:   ❌ acfeb416-716f-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:29:46.046Z] ℹ️ INFO:   ✅ 6cf3dd74-716f-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:29:46.046Z] ℹ️ INFO:   ❌ 6cf3dd74-716f-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:29:46.046Z] ℹ️ INFO:   ✅ 3c3ebcda-716f-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:29:46.047Z] ℹ️ INFO:   ❌ 3c3ebcda-716f-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:29:46.048Z] ℹ️ INFO:   ✅ e60839c6-716e-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:29:46.048Z] ℹ️ INFO:   ✅ e60839c6-716e-123f-d5b1-aa772e2f0671: agent_subdisposition = "License "
+[2026-01-21T13:29:46.048Z] ℹ️ INFO: Inbound Summary: 5/5 have agent_disposition, 1/5 have agent_subdisposition
+[2026-01-21T13:29:46.089Z] ℹ️ INFO: Outbound (raw_queue_outbound): Found 5 recent records
+[2026-01-21T13:29:46.089Z] ℹ️ INFO:   ✅ q9h1ml17qsmdpj2e2qiv: agent_disposition = "NON-SALE"
+[2026-01-21T13:29:46.090Z] ℹ️ INFO:   ✅ q9h1ml17qsmdpj2e2qiv: agent_subdisposition = "Not interested"
+[2026-01-21T13:29:46.090Z] ℹ️ INFO:   ❌ m63oqn0ac50qe5snu5ol: agent_disposition MISSING
+[2026-01-21T13:29:46.091Z] ℹ️ INFO:   🔍 Available fields: to, a_leg, state, callid, abandoned, agent_ext, timestamp, agent_name, queue_name, called_time, disposition, hangup_time, agent_history, caller_id_name, interaction_id...
+[2026-01-21T13:29:46.091Z] ℹ️ INFO:   ❌ m63oqn0ac50qe5snu5ol: agent_subdisposition MISSING
+[2026-01-21T13:29:46.092Z] ℹ️ INFO:   ✅ q9h1m25dslg7ul6595i1: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:29:46.092Z] ℹ️ INFO:   ✅ q9h1m25dslg7ul6595i1: agent_subdisposition = "Ringing"
+[2026-01-21T13:29:46.093Z] ℹ️ INFO:   ✅ i8bmtvm4d0dh5np3i00l: agent_disposition = "AS"
+[2026-01-21T13:29:46.093Z] ℹ️ INFO:   ✅ i8bmtvm4d0dh5np3i00l: agent_subdisposition = "Not Connected"
+[2026-01-21T13:29:46.094Z] ℹ️ INFO:   ✅ m63oqf254879pvsgq9e6: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:29:46.094Z] ℹ️ INFO:   ✅ m63oqf254879pvsgq9e6: agent_subdisposition = "Ringing"
+[2026-01-21T13:29:46.095Z] ℹ️ INFO: Outbound Summary: 4/5 have agent_disposition, 4/5 have agent_subdisposition
+[2026-01-21T13:29:46.115Z] ℹ️ INFO: Campaign (raw_campaigns): Found 5 recent records
+[2026-01-21T13:29:46.116Z] ℹ️ INFO:   ✅ b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition = "NON-SALE"
+[2026-01-21T13:29:46.117Z] ℹ️ INFO:   ✅ b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_subdisposition = "Call back"
+[2026-01-21T13:29:46.117Z] ℹ️ INFO:   ❌ 7f59c1cc-f438-4ae4-b123-95e99eb5059b: agent_disposition MISSING
+[2026-01-21T13:29:46.118Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:29:46.118Z] ℹ️ INFO:   ❌ 7f59c1cc-f438-4ae4-b123-95e99eb5059b: agent_subdisposition MISSING
+[2026-01-21T13:29:46.119Z] ℹ️ INFO:   ✅ 518d6d3d-2829-443d-9c2a-6d55a7f22c82: agent_disposition = "NON-SALE"
+[2026-01-21T13:29:46.119Z] ℹ️ INFO:   ✅ 518d6d3d-2829-443d-9c2a-6d55a7f22c82: agent_subdisposition = "Call back"
+[2026-01-21T13:29:46.120Z] ℹ️ INFO:   ❌ 2e7e7c6e-98b5-4155-9702-663d0e8e3301: agent_disposition MISSING
+[2026-01-21T13:29:46.120Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:29:46.121Z] ℹ️ INFO:   ❌ 2e7e7c6e-98b5-4155-9702-663d0e8e3301: agent_subdisposition MISSING
+[2026-01-21T13:29:46.122Z] ℹ️ INFO:   ❌ d8e3bdec-4f2d-429c-b2c1-2cdcb1298dc8: agent_disposition MISSING
+[2026-01-21T13:29:46.122Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:29:46.122Z] ℹ️ INFO:   ❌ d8e3bdec-4f2d-429c-b2c1-2cdcb1298dc8: agent_subdisposition MISSING
+[2026-01-21T13:29:46.123Z] ℹ️ INFO: Campaign Summary: 2/5 have agent_disposition, 2/5 have agent_subdisposition
+[2026-01-21T13:29:46.123Z] ℹ️ INFO: Step 2.2: Updating missing disposition fields for recent calls...
+[2026-01-21T13:29:46.124Z] ℹ️ INFO: Updating missing disposition fields and follow-up notes for recent calls...
+[2026-01-21T13:29:46.124Z] ℹ️ INFO: Processing Inbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:29:46.140Z] ℹ️ INFO: Inbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:29:46.141Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_cdrs
+[2026-01-21T13:29:46.668Z] ℹ️ INFO: 🔍 Found 11/50 target calls in API response
+[2026-01-21T13:29:46.669Z] ℹ️ INFO: 📊 4/11 calls now have disposition information
+[2026-01-21T13:29:46.669Z] ℹ️ INFO: Inbound: Re-fetched 11 calls from API
+[2026-01-21T13:29:46.670Z] ❌ ERROR: Error updating disposition fields for raw_queue_inbound: hasRecording is not defined
+[2026-01-21T13:29:46.670Z] ℹ️ INFO: Processing Outbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:29:46.704Z] ℹ️ INFO: Outbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:29:46.705Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_outbound_cdrs
+[2026-01-21T13:29:47.500Z] ℹ️ INFO: 🔍 Found 31/50 target calls in API response
+[2026-01-21T13:29:47.501Z] ℹ️ INFO: 📊 30/31 calls now have disposition information
+[2026-01-21T13:29:47.502Z] ℹ️ INFO: Outbound: Re-fetched 31 calls from API
+[2026-01-21T13:29:47.518Z] ℹ️ INFO:   ✅ Updated m63oqn0ac50qe5snu5ol: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.522Z] ℹ️ INFO:   ✅ Updated q9h1m25dslg7ul6595i1: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.527Z] ℹ️ INFO:   ✅ Updated i8bmtvm4d0dh5np3i00l: agent_disposition = "AS" (retry count reset to 0)
+[2026-01-21T13:29:47.533Z] ℹ️ INFO:   ✅ Updated m63oqf254879pvsgq9e6: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.538Z] ℹ️ INFO:   ✅ Updated m63oq1nlrkbkgd2jstch: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.544Z] ℹ️ INFO:   ✅ Updated 7pr04be6kqpdibjg05kv: agent_disposition = "AS", follow_up_notes = "Hijrah Group LLC" (retry count reset to 0)
+[2026-01-21T13:29:47.549Z] ℹ️ INFO:   ✅ Updated q9h1ml17qsmdpj2e2qiv: agent_disposition = "NON-SALE" (retry count reset to 0)
+[2026-01-21T13:29:47.554Z] ℹ️ INFO:   ✅ Updated q9h1m78maqhbk601krqq: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.559Z] ℹ️ INFO:   ✅ Updated orshfck6cjfl29jaah5m: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.564Z] ℹ️ INFO:   ✅ Updated 7pr048mkoq7i9u7k8r8c: agent_disposition = "AS", follow_up_notes = "Vestia AI LLC" (retry count reset to 0)
+[2026-01-21T13:29:47.568Z] ℹ️ INFO:   ✅ Updated q9h1motl53v8iqgh1a1s: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.573Z] ℹ️ INFO:   ✅ Updated cd3d20k4eg8encfs76d2: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.578Z] ℹ️ INFO:   ✅ Updated irpt8faj808ocvniv2tc: agent_disposition = "AS" (retry count reset to 0)
+[2026-01-21T13:29:47.583Z] ℹ️ INFO:   ✅ Updated orshfub09i7osog05e0k: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.588Z] ℹ️ INFO:   ✅ Updated q9h1ml24dc71c3jrmj35: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.593Z] ℹ️ INFO:   ✅ Updated vrdl53ekjbjdsp73er5k: agent_disposition = "OUTBOUND" (retry count reset to 0)
+[2026-01-21T13:29:47.598Z] ℹ️ INFO:   ✅ Updated l1tr4h2q58uvg0rtgeor: agent_disposition = "AS" (retry count reset to 0)
+[2026-01-21T13:29:47.602Z] ℹ️ INFO:   ✅ Updated q9h1m49j8hn4rtq56rbg: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.607Z] ℹ️ INFO:   ✅ Updated orshfjf1e6kc3iupe15e: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.611Z] ℹ️ INFO:   ✅ Updated cd3d24s155hc1tnr4htn: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.616Z] ℹ️ INFO:   ✅ Updated q9h1md6hnnl1um5u5d4h: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:29:47.621Z] ℹ️ INFO:   ✅ Updated m63oqsucajs0uhdgplta: agent_disposition = "NON-SALE" (retry count reset to 0)
+[2026-01-21T13:29:47.621Z] ❌ ERROR: Error updating disposition fields for raw_queue_outbound: hasRecording is not defined
+[2026-01-21T13:29:47.622Z] ℹ️ INFO: Processing Campaign calls for disposition and follow-up notes updates...
+[2026-01-21T13:29:47.631Z] ℹ️ INFO: Campaign: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:29:47.632Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/campaigns/leads/history
+[2026-01-21T13:29:47.901Z] ℹ️ INFO: 🔍 Found 1/50 target calls in API response
+[2026-01-21T13:29:47.902Z] ℹ️ INFO: 📊 1/1 calls now have disposition information
+[2026-01-21T13:29:47.903Z] ℹ️ INFO: Campaign: Re-fetched 1 calls from API
+[2026-01-21T13:29:47.915Z] ℹ️ INFO:   ✅ Updated b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition = "NON-SALE" (retry count reset to 0)
+[2026-01-21T13:29:47.916Z] ℹ️ INFO: Updating 1 records in final_report table with disposition and follow-up notes...
+[2026-01-21T13:29:47.922Z] ℹ️ INFO:   ✅ Updated final_report for b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition="NON-SALE", sub_disp="Call back"
+[2026-01-21T13:29:47.922Z] ℹ️ INFO: Campaign: Updated 1 records in final_report table
+[2026-01-21T13:29:47.923Z] ℹ️ INFO: Campaign: Successfully updated 1 calls with disposition and follow-up notes
+[2026-01-21T13:29:47.923Z] ℹ️ INFO: Total calls updated with disposition and follow-up notes: 1
+[2026-01-21T13:29:47.924Z] ℹ️ INFO: Step 3: Checking raw tables after population...
+[2026-01-21T13:29:47.924Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:29:47.926Z] ℹ️ INFO: raw_queue_inbound: 1882 records
+[2026-01-21T13:29:47.928Z] ℹ️ INFO: raw_queue_outbound: 7929 records
+[2026-01-21T13:29:47.929Z] ℹ️ INFO: raw_campaigns: 753 records
+[2026-01-21T13:29:47.930Z] ℹ️ INFO: Total new raw records added: 13
+[2026-01-21T13:29:47.931Z] ℹ️ INFO: Step 4: Populating final_report table from raw tables...
+[2026-01-21T13:29:47.931Z] ℹ️ INFO: Adding new data without clearing existing records...
+[2026-01-21T13:29:47.932Z] ℹ️ INFO: Using enhanced final report population with CDR matching and follow-up notes...
+[2026-01-21T13:29:50.221Z] ✅ SUCCESS: Enhanced final report population result: {"success":true,"message":"Successfully populated final_report table with enhanced data in 2.29s","standardPopulation":{"success":true,"message":"Successfully populated final_report table with 1504 records in 2.22s","recordCount":1504},"followUpNotesCount":2380}
+[2026-01-21T13:29:50.222Z] ℹ️ INFO: Step 5: Verifying final_report table has data...
+[2026-01-21T13:29:50.227Z] ℹ️ INFO: final_report: 10564 records
+[2026-01-21T13:29:50.228Z] ℹ️ INFO: CDR records in final_report: 0 records
+[2026-01-21T13:29:50.244Z] ℹ️ INFO: Records with follow-up notes: 2380 records
+[2026-01-21T13:29:50.251Z] ℹ️ INFO: Record type distribution in final_report:
+[2026-01-21T13:29:50.251Z] ℹ️ INFO:   Outbound: 7929 records
+[2026-01-21T13:29:50.252Z] ℹ️ INFO:   Inbound: 1882 records
+[2026-01-21T13:29:50.253Z] ℹ️ INFO:   Campaign: 753 records
+[2026-01-21T13:29:50.253Z] ✅ SUCCESS: Process completed successfully in 6.85s!
+[2026-01-21T13:29:50.255Z] ℹ️ INFO: Scheduling next run at 2026-01-21T13:34:50.255Z (in 5 minutes)
+[2026-01-21T13:34:50.270Z] ℹ️ INFO: Starting database population process (ID: run-1769002490270)...
+[2026-01-21T13:34:50.272Z] ℹ️ INFO: Using date range: 2026-01-20T13:34:50.000Z to 2026-01-21T13:34:50.000Z
+[2026-01-21T13:34:50.272Z] ℹ️ INFO: Lookback period: 24 hours
+[2026-01-21T13:34:50.273Z] ℹ️ INFO: Step 1: Checking current state of raw tables...
+[2026-01-21T13:34:50.274Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:34:50.282Z] ℹ️ INFO: raw_queue_inbound: 1882 records
+[2026-01-21T13:34:50.289Z] ℹ️ INFO: raw_queue_outbound: 7929 records
+[2026-01-21T13:34:50.291Z] ℹ️ INFO: raw_campaigns: 753 records
+[2026-01-21T13:34:50.291Z] ℹ️ INFO: Step 2: Fetching data from APIs and populating raw tables...
+[2026-01-21T13:34:52.839Z] ℹ️ INFO: API fetch results: {"totalTime":2547,"results":{"queueCalls":{"endpoint":"queueCalls","totalRecords":271,"totalPages":1},"queueOutboundCalls":{"endpoint":"queueOutboundCalls","totalRecords":1136,"totalPages":1},"campaignsActivity":{"endpoint":"campaignsActivity","totalRecords":101,"totalPages":1}}}
+[2026-01-21T13:34:52.840Z] ℹ️ INFO: Step 2.1: Verifying agent_disposition fields in stored raw data...
+[2026-01-21T13:34:52.841Z] ℹ️ INFO: Verifying agent_disposition fields in raw tables...
+[2026-01-21T13:34:52.867Z] ℹ️ INFO: Inbound (raw_queue_inbound): Found 5 recent records
+[2026-01-21T13:34:52.867Z] ℹ️ INFO:   ✅ 94a4d727-716d-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:34:52.868Z] ℹ️ INFO:   ❌ 94a4d727-716d-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:34:52.869Z] ℹ️ INFO:   ✅ acfeb416-716f-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:34:52.869Z] ℹ️ INFO:   ❌ acfeb416-716f-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:34:52.870Z] ℹ️ INFO:   ✅ 6cf3dd74-716f-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:34:52.870Z] ℹ️ INFO:   ❌ 6cf3dd74-716f-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:34:52.871Z] ℹ️ INFO:   ✅ 3c3ebcda-716f-123f-d5b1-aa772e2f0671: agent_disposition = ""
+[2026-01-21T13:34:52.871Z] ℹ️ INFO:   ❌ 3c3ebcda-716f-123f-d5b1-aa772e2f0671: agent_subdisposition MISSING
+[2026-01-21T13:34:52.872Z] ℹ️ INFO:   ✅ e60839c6-716e-123f-d5b1-aa772e2f0671: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:34:52.872Z] ℹ️ INFO:   ✅ e60839c6-716e-123f-d5b1-aa772e2f0671: agent_subdisposition = "License "
+[2026-01-21T13:34:52.873Z] ℹ️ INFO: Inbound Summary: 5/5 have agent_disposition, 1/5 have agent_subdisposition
+[2026-01-21T13:34:52.917Z] ℹ️ INFO: Outbound (raw_queue_outbound): Found 5 recent records
+[2026-01-21T13:34:52.917Z] ℹ️ INFO:   ✅ qf06b69p6m2t2gcoqb05: agent_disposition = "NON-SALE"
+[2026-01-21T13:34:52.918Z] ℹ️ INFO:   ✅ qf06b69p6m2t2gcoqb05: agent_subdisposition = "Call back"
+[2026-01-21T13:34:52.918Z] ℹ️ INFO:   ✅ m63oq65t4bs7gr3ov8dp: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:34:52.919Z] ℹ️ INFO:   ✅ m63oq65t4bs7gr3ov8dp: agent_subdisposition = "Ringing"
+[2026-01-21T13:34:52.919Z] ℹ️ INFO:   ✅ i8bmte15olu96urgr315: agent_disposition = "AS"
+[2026-01-21T13:34:52.920Z] ℹ️ INFO:   ✅ i8bmte15olu96urgr315: agent_subdisposition = "Not Connected"
+[2026-01-21T13:34:52.920Z] ℹ️ INFO:   ✅ cd3d2bae56b7j26hkvhq: agent_disposition = "NOT CONTACTABLE"
+[2026-01-21T13:34:52.920Z] ℹ️ INFO:   ✅ cd3d2bae56b7j26hkvhq: agent_subdisposition = "Ringing"
+[2026-01-21T13:34:52.921Z] ℹ️ INFO:   ✅ m63oq8l6knfkkvjt0hiu: agent_disposition = "NON-SALE"
+[2026-01-21T13:34:52.921Z] ℹ️ INFO:   ✅ m63oq8l6knfkkvjt0hiu: agent_subdisposition = "Not interested"
+[2026-01-21T13:34:52.922Z] ℹ️ INFO: Outbound Summary: 5/5 have agent_disposition, 5/5 have agent_subdisposition
+[2026-01-21T13:34:52.941Z] ℹ️ INFO: Campaign (raw_campaigns): Found 5 recent records
+[2026-01-21T13:34:52.942Z] ℹ️ INFO:   ✅ 9db2a601-5e17-449c-a4f4-24d6b234a210: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:34:52.942Z] ℹ️ INFO:   ✅ 9db2a601-5e17-449c-a4f4-24d6b234a210: agent_subdisposition = "Other "
+[2026-01-21T13:34:52.943Z] ℹ️ INFO:   ✅ 50e5edde-fbed-47e2-b361-d5f607d319da: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:34:52.944Z] ℹ️ INFO:   ✅ 50e5edde-fbed-47e2-b361-d5f607d319da: agent_subdisposition = "License "
+[2026-01-21T13:34:52.944Z] ℹ️ INFO:   ❌ dfb8694a-a576-457e-82d0-7498340249a2: agent_disposition MISSING
+[2026-01-21T13:34:52.945Z] ℹ️ INFO:   🔍 Available fields: status, call_id, datetime, lead_name, lead_type, timestamp, agent_name, disposition, lead_number, hangup_cause, lead_history, campaign_name, campaign_type, lead_last_name, lead_ticket_id...
+[2026-01-21T13:34:52.945Z] ℹ️ INFO:   ❌ dfb8694a-a576-457e-82d0-7498340249a2: agent_subdisposition MISSING
+[2026-01-21T13:34:52.946Z] ℹ️ INFO:   ✅ 93fcd091-448f-4430-9f96-dc0a622b1bbc: agent_disposition = "GENERAL_INQUIRY"
+[2026-01-21T13:34:52.946Z] ℹ️ INFO:   ✅ 93fcd091-448f-4430-9f96-dc0a622b1bbc: agent_subdisposition = "Visa "
+[2026-01-21T13:34:52.947Z] ℹ️ INFO:   ✅ b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_disposition = "NON-SALE"
+[2026-01-21T13:34:52.947Z] ℹ️ INFO:   ✅ b9da42a7-d392-412e-ad7b-a44d672f48f5: agent_subdisposition = "Call back"
+[2026-01-21T13:34:52.947Z] ℹ️ INFO: Campaign Summary: 4/5 have agent_disposition, 4/5 have agent_subdisposition
+[2026-01-21T13:34:52.948Z] ℹ️ INFO: Step 2.2: Updating missing disposition fields for recent calls...
+[2026-01-21T13:34:52.948Z] ℹ️ INFO: Updating missing disposition fields and follow-up notes for recent calls...
+[2026-01-21T13:34:52.949Z] ℹ️ INFO: Processing Inbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:34:52.962Z] ℹ️ INFO: Inbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:34:52.963Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_cdrs
+[2026-01-21T13:34:53.235Z] ℹ️ INFO: 🔍 Found 11/50 target calls in API response
+[2026-01-21T13:34:53.236Z] ℹ️ INFO: 📊 5/11 calls now have disposition information
+[2026-01-21T13:34:53.236Z] ℹ️ INFO: Inbound: Re-fetched 11 calls from API
+[2026-01-21T13:34:53.237Z] ❌ ERROR: Error updating disposition fields for raw_queue_inbound: hasRecording is not defined
+[2026-01-21T13:34:53.237Z] ℹ️ INFO: Processing Outbound calls for disposition and follow-up notes updates...
+[2026-01-21T13:34:53.262Z] ℹ️ INFO: Outbound: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:34:53.263Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/queues_outbound_cdrs
+[2026-01-21T13:34:53.607Z] ℹ️ INFO: 🔍 Found 42/50 target calls in API response
+[2026-01-21T13:34:53.608Z] ℹ️ INFO: 📊 41/42 calls now have disposition information
+[2026-01-21T13:34:53.609Z] ℹ️ INFO: Outbound: Re-fetched 42 calls from API
+[2026-01-21T13:34:53.619Z] ℹ️ INFO:   ✅ Updated qf06bvmlm4kp7t0ogho3: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.624Z] ℹ️ INFO:   ✅ Updated m63oq8l6knfkkvjt0hiu: agent_disposition = "NON-SALE" (retry count reset to 0)
+[2026-01-21T13:34:53.630Z] ℹ️ INFO:   ✅ Updated cd3d2bae56b7j26hkvhq: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.635Z] ℹ️ INFO:   ✅ Updated i8bmte15olu96urgr315: agent_disposition = "AS" (retry count reset to 0)
+[2026-01-21T13:34:53.641Z] ℹ️ INFO:   ✅ Updated q9h1mvs105mckbq5dorl: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.646Z] ℹ️ INFO:   ✅ Updated m63oq65t4bs7gr3ov8dp: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.651Z] ℹ️ INFO:   ✅ Updated qf06b69p6m2t2gcoqb05: agent_disposition = "NON-SALE", follow_up_notes = "Client disconnected the call by saying will call back later" (retry count reset to 0)
+[2026-01-21T13:34:53.656Z] ℹ️ INFO:   ✅ Updated q9h1m537l8l71d0nri1f: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.661Z] ℹ️ INFO:   ✅ Updated m63oqvq4bagb1s6qq63h: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.667Z] ℹ️ INFO:   ✅ Updated q9h1mfjvl7901i69g8mi: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.673Z] ℹ️ INFO:   ✅ Updated m63oqn0ac50qe5snu5ol: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.678Z] ℹ️ INFO:   ✅ Updated l1tr469kte6epg59e756: agent_disposition = "AS" (retry count reset to 0)
+[2026-01-21T13:34:53.682Z] ℹ️ INFO:   ✅ Updated q9h1m25dslg7ul6595i1: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.686Z] ℹ️ INFO:   ✅ Updated i8bmtvm4d0dh5np3i00l: agent_disposition = "AS" (retry count reset to 0)
+[2026-01-21T13:34:53.691Z] ℹ️ INFO:   ✅ Updated m63oqf254879pvsgq9e6: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.697Z] ℹ️ INFO:   ✅ Updated m63oq1nlrkbkgd2jstch: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.703Z] ℹ️ INFO:   ✅ Updated 7pr04be6kqpdibjg05kv: agent_disposition = "AS", follow_up_notes = "Hijrah Group LLC" (retry count reset to 0)
+[2026-01-21T13:34:53.709Z] ℹ️ INFO:   ✅ Updated q9h1ml17qsmdpj2e2qiv: agent_disposition = "NON-SALE" (retry count reset to 0)
+[2026-01-21T13:34:53.715Z] ℹ️ INFO:   ✅ Updated q9h1m78maqhbk601krqq: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.721Z] ℹ️ INFO:   ✅ Updated orshfck6cjfl29jaah5m: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.726Z] ℹ️ INFO:   ✅ Updated 7pr048mkoq7i9u7k8r8c: agent_disposition = "AS", follow_up_notes = "Vestia AI LLC" (retry count reset to 0)
+[2026-01-21T13:34:53.731Z] ℹ️ INFO:   ✅ Updated q9h1motl53v8iqgh1a1s: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.737Z] ℹ️ INFO:   ✅ Updated cd3d20k4eg8encfs76d2: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.743Z] ℹ️ INFO:   ✅ Updated irpt8faj808ocvniv2tc: agent_disposition = "AS" (retry count reset to 0)
+[2026-01-21T13:34:53.748Z] ℹ️ INFO:   ✅ Updated orshfub09i7osog05e0k: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.754Z] ℹ️ INFO:   ✅ Updated q9h1ml24dc71c3jrmj35: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.759Z] ℹ️ INFO:   ✅ Updated vrdl53ekjbjdsp73er5k: agent_disposition = "OUTBOUND" (retry count reset to 0)
+[2026-01-21T13:34:53.763Z] ℹ️ INFO:   ✅ Updated l1tr4h2q58uvg0rtgeor: agent_disposition = "AS" (retry count reset to 0)
+[2026-01-21T13:34:53.769Z] ℹ️ INFO:   ✅ Updated q9h1m49j8hn4rtq56rbg: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.774Z] ℹ️ INFO:   ✅ Updated orshfjf1e6kc3iupe15e: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.779Z] ℹ️ INFO:   ✅ Updated cd3d24s155hc1tnr4htn: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.784Z] ℹ️ INFO:   ✅ Updated q9h1md6hnnl1um5u5d4h: agent_disposition = "NOT CONTACTABLE" (retry count reset to 0)
+[2026-01-21T13:34:53.788Z] ℹ️ INFO:   ✅ Updated m63oqsucajs0uhdgplta: agent_disposition = "NON-SALE" (retry count reset to 0)
+[2026-01-21T13:34:53.789Z] ❌ ERROR: Error updating disposition fields for raw_queue_outbound: hasRecording is not defined
+[2026-01-21T13:34:53.790Z] ℹ️ INFO: Processing Campaign calls for disposition and follow-up notes updates...
+[2026-01-21T13:34:53.803Z] ℹ️ INFO: Campaign: Found 50 calls missing disposition or follow-up notes
+[2026-01-21T13:34:53.804Z] ℹ️ INFO: 🔍 Re-fetching calls from: /api/v2/reports/campaigns/leads/history
+[2026-01-21T13:34:54.075Z] ℹ️ INFO: 🔍 Found 5/50 target calls in API response
+[2026-01-21T13:34:54.077Z] ℹ️ INFO: 📊 4/5 calls now have disposition information
+[2026-01-21T13:34:54.079Z] ℹ️ INFO: Campaign: Re-fetched 5 calls from API
+[2026-01-21T13:34:54.092Z] ℹ️ INFO:   ✅ Updated 9db2a601-5e17-449c-a4f4-24d6b234a210: agent_disposition = "GENERAL_INQUIRY", follow_up_notes = "Voice isuue" (retry count reset to 0)
+[2026-01-21T13:34:54.103Z] ℹ️ INFO:   ✅ Updated 50e5edde-fbed-47e2-b361-d5f607d319da: agent_disposition = "GENERAL_INQUIRY" (retry count reset to 0)
+[2026-01-21T13:34:54.105Z] ❌ ERROR: Error updating disposition fields for raw_campaigns: hasRecording is not defined
+[2026-01-21T13:34:54.107Z] ℹ️ INFO: Total calls updated with disposition and follow-up notes: 0
+[2026-01-21T13:34:54.109Z] ℹ️ INFO: Step 3: Checking raw tables after population...
+[2026-01-21T13:34:54.111Z] ℹ️ INFO: Checking raw tables for data...
+[2026-01-21T13:34:54.116Z] ℹ️ INFO: raw_queue_inbound: 1882 records
+[2026-01-21T13:34:54.125Z] ℹ️ INFO: raw_queue_outbound: 7940 records
+[2026-01-21T13:34:54.127Z] ℹ️ INFO: raw_campaigns: 757 records
+[2026-01-21T13:34:54.128Z] ℹ️ INFO: Total new raw records added: 15
+[2026-01-21T13:34:54.129Z] ℹ️ INFO: Step 4: Populating final_report table from raw tables...
+[2026-01-21T13:34:54.129Z] ℹ️ INFO: Adding new data without clearing existing records...
+[2026-01-21T13:34:54.130Z] ℹ️ INFO: Using enhanced final report population with CDR matching and follow-up notes...
+[2026-01-21T13:34:56.012Z] ✅ SUCCESS: Enhanced final report population result: {"success":true,"message":"Successfully populated final_report table with enhanced data in 1.88s","standardPopulation":{"success":true,"message":"Successfully populated final_report table with 1508 records in 1.82s","recordCount":1508},"followUpNotesCount":2382}
+[2026-01-21T13:34:56.013Z] ℹ️ INFO: Step 5: Verifying final_report table has data...
+[2026-01-21T13:34:56.016Z] ℹ️ INFO: final_report: 10579 records
+[2026-01-21T13:34:56.017Z] ℹ️ INFO: CDR records in final_report: 0 records
+[2026-01-21T13:34:56.027Z] ℹ️ INFO: Records with follow-up notes: 2382 records
+[2026-01-21T13:34:56.031Z] ℹ️ INFO: Record type distribution in final_report:
+[2026-01-21T13:34:56.032Z] ℹ️ INFO:   Outbound: 7940 records
+[2026-01-21T13:34:56.032Z] ℹ️ INFO:   Inbound: 1882 records
+[2026-01-21T13:34:56.032Z] ℹ️ INFO:   Campaign: 757 records
+[2026-01-21T13:34:56.033Z] ✅ SUCCESS: Process completed successfully in 5.76s!
+[2026-01-21T13:34:56.034Z] ℹ️ INFO: Scheduling next run at 2026-01-21T13:39:56.034Z (in 5 minutes)
