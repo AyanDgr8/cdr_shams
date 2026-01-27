@@ -343,6 +343,7 @@ async function updateFinalReportDispositions(callsToUpdate) {
           values.push(agentDisposition);
         }
         
+        
         if (subDisp1 || subDisp2) {
           fieldsToUpdate.push('sub_disp_1 = ?', 'sub_disp_2 = ?');
           values.push(subDisp1, subDisp2);
